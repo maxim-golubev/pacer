@@ -7,9 +7,13 @@
 <p align="center">Per-process power modes for Apple Silicon Macs.</p>
 
 <p align="center">
+  <a href="https://github.com/maxim-golubev/pacer/releases/latest"><b>Download for Apple Silicon</b></a>
+</p>
+
+<p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/menu-dark.png">
-    <img alt="The Pacer menu: a target process with its PID and CPU use, then three modes, Full power, Balanced with a 70% duty control, and Eco, then toggles to keep the mode across restarts and to launch at login" src="docs/images/menu-light.png" width="300">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/menu-dark.gif">
+    <img alt="The Pacer menu for a process called java, switched from Full power at 1012% CPU to Balanced at 70% duty and 451% CPU, down to 65%, back to 70%, then to Eco at 340% CPU" src="docs/images/menu-light.gif" width="328">
   </picture>
 </p>
 
@@ -104,7 +108,20 @@ sudo taskinfo <pid> | grep "eff darwin BG"     # YES in Eco, NO otherwise
   terminal is reported by the shell as suspended each time it is paused.
 - A paused process cannot draw, so an app's window can hitch in Balanced.
 
-## Build
+## Install
+
+Requires an Apple Silicon Mac on macOS 13 or later.
+
+1. Download `Pacer-<version>.zip` from
+   [Releases](https://github.com/maxim-golubev/pacer/releases/latest), unzip
+   it, and move `Pacer.app` to Applications.
+2. Open it. The app is signed ad hoc, not notarized by Apple, so macOS blocks
+   the first launch: open **System Settings → Privacy & Security** and choose
+   **Open Anyway**.
+3. Click the gauge in the menu bar and choose a target. The needle shows the
+   current mode.
+
+## Build from source
 
 Requires the Xcode command line tools. There is no Xcode project: `build.sh`
 compiles about 1,300 lines of Swift (SwiftUI and AppKit) with `swiftc`,
@@ -115,8 +132,5 @@ assembles the bundle, and signs it ad hoc.
 mv ~/Library/Caches/dev.maxim.pacer/build/Pacer.app /Applications/
 open /Applications/Pacer.app
 ```
-
-Then choose a target from the menu bar icon. The icon's needle shows the
-current mode.
 
 MIT licensed.
