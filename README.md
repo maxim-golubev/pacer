@@ -12,8 +12,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/menu-dark.gif">
-    <img alt="The Pacer menu for a process called java, switched from Full power at 1012% CPU to Balanced at 70% duty and 451% CPU, down to 65%, back to 70%, then to Eco at 340% CPU" src="docs/images/menu-light.gif" width="328">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/modes-dark.gif">
+    <img alt="The Pacer menu for a process called java, in each mode in turn: Full power at 1012% CPU, Balanced at 70% duty and 451% CPU, and Eco at 340% CPU" src="docs/images/modes-light.gif" width="328">
   </picture>
 </p>
 

@@ -5,8 +5,8 @@
 //       -framework ServiceManagement -o "$TMPDIR/pacer-menu" \
 //       docs/images/main.swift $(ls Sources/*.swift | grep -v PacerApp)
 //   "$TMPDIR/pacer-menu" "$TMPDIR/frames" && defaults delete pacer-menu
-//   for t in light dark; do ffmpeg -y -framerate 10/13 -i "$TMPDIR/frames/$t-%02d.png" -filter_complex \
-//       "split[a][b];[a]palettegen=max_colors=128[p];[b][p]paletteuse=dither=none" -loop 0 docs/images/menu-$t.gif; done
+//   for t in light dark; do ffmpeg -y -framerate 1/2 -i "$TMPDIR/frames/$t-%02d.png" -filter_complex \
+//       "split[a][b];[a]palettegen=max_colors=128[p];[b][p]paletteuse=dither=none" -loop 0 -final_delay 200 docs/images/modes-$t.gif; done
 import AppKit
 import SwiftUI
 
@@ -30,12 +30,9 @@ MainActor.assumeIsolated {
     engine.matchedPIDs = [4812]
     engine.isRunning = true
 
-    // The states one tuning session walks through, with the CPU use measured
-    // for each on an M3 Pro (see the README's table).
-    let steps: [(Mode, Int, Double)] = [
-        (.full, 70, 1012), (.balanced, 70, 451), (.balanced, 65, 381),
-        (.balanced, 70, 451), (.eco, 70, 340),
-    ]
+    // The three modes, with the CPU use measured for each on an M3 Pro (see
+    // the README's table). Each is on screen for the same two seconds.
+    let steps: [(Mode, Int, Double)] = [(.full, 70, 1012), (.balanced, 70, 451), (.eco, 70, 340)]
     let themes: [(String, NSAppearance.Name, NSColor)] = [
         ("light", .aqua, .white),
         ("dark", .darkAqua, NSColor(srgbRed: 0x0d / 255, green: 0x11 / 255, blue: 0x17 / 255, alpha: 1)),
