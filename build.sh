@@ -19,8 +19,11 @@ mkdir -p "$MACOS" "$RES"
 cp "$HERE/Info.plist" "$CONTENTS/Info.plist"
 
 # Resources: per-mode menu bar templates (auto-tinted by AppKit) + app icon
+# (Assets.car: the Liquid Glass icon for macOS 26 and later; AppIcon.icns: the same icon for earlier versions.
+# Both are rendered from Pacer.icon by Tools/app_icon.sh.)
 cp "$HERE/Resources/"MenuBarIcon*Template*.png   "$RES/"
 cp "$HERE/Resources/AppIcon.icns"                "$RES/"
+cp "$HERE/Resources/Assets.car"                 "$RES/"
 
 # Compile Swift sources into a single binary
 swiftc \

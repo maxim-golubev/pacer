@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- The rest of the gauge, 324 to 405 degrees, drawn faint by the layer's opacity. -->
+  <path fill="#FFFFFF" d="M830.12,315.28 A393.22,393.22 0 0 1 790.05,824.45 A51.12,51.12 0 0 1 717.75,752.16 A290.98,290.98 0 0 0 747.41,375.37 A51.12,51.12 0 0 1 830.12,315.28 Z"/>
+</svg>

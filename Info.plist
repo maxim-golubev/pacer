@@ -8,6 +8,8 @@
     <string>Pacer</string>
     <key>CFBundleIconFile</key>
     <string>AppIcon</string>
+    <key>CFBundleIconName</key>
+    <string>Pacer</string>
     <key>CFBundleIdentifier</key>
     <string>dev.maxim.pacer</string>
     <key>CFBundleInfoDictionaryVersion</key>

@@ -1,5 +1,8 @@
 <h1 align="center">
-  <img alt="The Pacer icon: a white gauge on a green tile, needle at 70%" src="docs/images/icon.png" width="112">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/icon-dark.png">
+    <img alt="The Pacer icon: a white gauge on a green tile, needle at 70%" src="docs/images/icon-light.png" width="112">
+  </picture>
   <br>
   Pacer
 </h1>
